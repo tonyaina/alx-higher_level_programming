@@ -43,16 +43,21 @@ class Rectangle:
     def perimeter(self):
         return 2*(self.width + self.heigght)
 
-    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-    
-    print(str(my_rectangle))
-    print(repr(my_rectangle))
+    def my_print(self):
+        """Print the rectangle with a # character."""
+        for i in range(0, self.__width):
+            for j in range(self.__height):
+                print("#", end="")
+                print("")
+        
+        if self.__width == 0:
 
+            print("")
 
-    print("--")
+        if self.__height == 0:
 
+            print("")
 
-    my_rectangle.width = 14
-    my_rectangle.height = 6
-    print(my_rectangle)
-    print(repr(my_rectangle))
+    def __str__(self):
+        """prints a rectangle using '#'"""
+        return f"{self.my_print()}"
